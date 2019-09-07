@@ -29,27 +29,29 @@ console.log("Expected output of max() is 10 " + myFunctionTest(10, function () {
     return max(5, 10);
 }));
 
-/* Problem 3. finding maximum of three numbers
-function maxOfThree(num1,num2,num3){
-    return max(num1,num2) > num3 ? ;
-}
-*/
 
-console.log("Expected output of max() is 10 " + myFunctionTest(10, function () {
-    return max(5, 10);
+/* Problem 3. finding maximum of three numbers*/
+function maxOfThree(num1,num2,num3){
+    let greater = num1 > num2 ? num1 : num2;
+    return num3 > greater ? num3 : greater;
+}
+
+console.log("Expected output of max() is 12 " + myFunctionTest(12, function () {
+    return maxOfThree(5, 10,12);
 }));
+
+
 
 /* Problem 4. function is vowel*/
 function isVowel(cha) {
-    if ((cha === "a" || cha === "e" || cha === "i" || cha === "i" || cha === "o" || cha === "u") && cha.length === 1)
-        return true;
-    else
-        return false;
+    if (cha.length === 0) return false;
+    let vowels = 'AEIOU';
+    return (vowels.indexOf(cha) >= 0) || (vowels.toLocaleLowerCase().indexOf(cha) >= 0);
 }
 
 
 console.log("Expected output of isVowel() is true " + myFunctionTest(true, function () {
-    return isVowel("z");
+    return isVowel("i");
 }));
 
 /* Problem 5. function Sum and Multiply*/
